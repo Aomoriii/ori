@@ -2,20 +2,23 @@
 <html>
   {{ partial "head.html" . }}
   
-  <body>
-    <div class="flex flex-col flex-nowrapn justify-between h-screen">
-      <div class=" bg-gray-500 m-auto w-1/2 h-14 ">
-        112
+  <body class="bg-slate-100">
+    <div style="display: flex; flex-flow: column wrap; min-height: calc(100vh);">
+      <div  class=" bg-gray-300 w-full h-32 ">
+        
       </div>
-      <div class="flex-1">
+
+      {{ partial "header.html" .}}
+
+      <div class="w-full">
         {{ block "main" . }}{{ end }}
       </div>
-    
-      <!-- <div class=" bg-green-100 h-1/6">
+      <div class="w-full bg-green-100 h-36">
+        
+      </div>
 
-      </div> -->
+      </div>
     </div>
-    
   </body>
 </html>
  
