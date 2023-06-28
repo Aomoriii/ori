@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{{ .Site.Title }}</title>
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    {{ $styles := resources.Get "css/tailwind.scss" }} 
-    {{/*  {{ $styles = $styles | resources.PostCSS (dict "inlineImports" true) }}   */}}
-    {{- $styles := $styles | resources.ToCSS | postCSS (dict "config" "postcss.config.js") -}}
-
-    {{ if hugo.IsProduction }} 
-      {{ $styles = $styles | minify }} 
-    {{ end }}
-
-    <link href="{{ $styles.Permalink }}" rel="stylesheet" />
-  </head>
-
+  {{ partial "head.html" . }}
+  
   <body>
-    {{ block "main" . }}{{ end }}
+    <div class="flex flex-col flex-nowrapn justify-between h-screen">
+      <div class=" bg-gray-500 m-auto w-1/2 h-14 ">
+        112
+      </div>
+      <div class="flex-1">
+        {{ block "main" . }}{{ end }}
+      </div>
+    
+      <!-- <div class=" bg-green-100 h-1/6">
+
+      </div> -->
+    </div>
+    
   </body>
 </html>
+ 
