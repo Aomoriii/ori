@@ -2,20 +2,20 @@
 <html>
   {{ partial "head.html" . }}
   
-  <body class="bg-slate-100">
-    <div style="display: flex; flex-flow: column wrap; min-height: calc(100vh);">
-      <div  class=" bg-gray-300 w-full h-32 ">
+  <body class="bg-green-bg">
+    <div class="main">
+      
+      <div  class=" bg-banner w-full h-32">
         
       </div>
-
       {{ partial "header.html" .}}
 
-      <div class="w-full">
+      <div style="height: calc(100vh - 376px)">
         {{ block "main" . }}{{ end }}
       </div>
-      <div class="w-full bg-green-100 h-36">
-        
-      </div>
+
+      {{ partial "footer.html" . }}
+
 
       </div>
     </div>
